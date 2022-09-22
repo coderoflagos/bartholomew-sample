@@ -2,39 +2,37 @@
 {{> content_top }}
 
 
-     <div class="col-md-6">
-      <a href="javascript:void(0)" style="color: #212529; text-decoration: none;">
+<h4>Recent Posts</h4>
+{{!-- 
+    The blogs function iterates over site pages and returns only the posts
+    found under /content/blog.
+ --}}
+{{#each (blogs site.pages)}}
+<div class="col-md-6">
+    <a href="javascript:void(0)" style="color: #212529; text-decoration: none;">
         <div class="cardo shadow-lg" style="display: inline-block;">
-      <img src="https://kinsta.com/wp-content/uploads/2018/04/visual-content-strategy-2.png" class="card__image" alt="brown couch" />
-     <div class="card__content">
-        {{#with page.head}}
-   <span class="card__title">{{title}}</span>
-            <p class="blog-post-meta card-text">{{#if extra.date}}Published: {{extra.date}}{{/if}}</p>
-            {{/with}}
-            {{! Since this is HTML, we use the triple-curly }}
-            {{{page.body}}}
-            {{! Remove the `!` on the line below to see how to call a Rhai script }}
-            {{! echo "world" }}
+            <img src="https://kinsta.com/wp-content/uploads/2018/04/visual-content-strategy-2.png" class="card__image"
+                alt="brown couch" />
+            <div class="card__content">
+                {{!--
+                 `this` refers to the particular post
+                 --}}
+                {{#with this.head}}
+                <span class="card__title">{{title}}</span>
+                <p class="blog-post-meta card-text">{{#if extra.date}}Published: {{extra.date}}{{/if}}</p>
+                {{/with}}
+                {{! Since this is HTML, we use the triple-curly }}
+                {{{page.body}}}
+                {{! Remove the `!` on the line below to see how to call a Rhai script }}
+                {{! echo "world" }}
             </div>
-            
-            <div class="p-4">
-    <h4 class="fst-italic">Recent Posts</h4>
-    <ol class="list-unstyled mb-0">
-        {{#each site.pages}}<li><a href="{{uri}}">{{page.head.title}}</a></li>
-        {{/each }}
-    </ol>
-</div>
 
-            </div>
-            </a> 
+        </div>
+    </a>
 </div>
+{{/each}}
 
-  
-</div>
-</div>
-</div>
+<!-- end col -->
 
-    <!-- end col -->
-    
 {{! This closes the body. See content_bottom.hbs. }}
 {{> content_bottom }}
