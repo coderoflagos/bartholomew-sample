@@ -6,7 +6,7 @@ tags = []
 [extra]
 type = "post"
 author = "Opemipo Disu"
-
+images = "/static/images/image-1.jpg"
 ---
 
 Let's get the cats out of the bag! I'm joining Fermyon as a Developer Advocate
