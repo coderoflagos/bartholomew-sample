@@ -44,7 +44,7 @@ A few months after completing high school - In December 2021, I came across Gita
 
 I created a CSV file where I uploaded the intents, and sort of that. There is nothing much about this project - just that it helps get insultive phrases and sentences then it sends an error to the user that whatever they're saying is unacceptable. For example 👇🏽:
 
-<img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1647024079478/UEOsDbofB.png"
+<img src="https://tarunbatra.com/data/images/git-before-github/cover.png"
      alt="Markdown Monster icon"
      style="position: relative;
     z-index: 1;
