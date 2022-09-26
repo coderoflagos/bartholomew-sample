@@ -6,7 +6,7 @@ tags = []
 [extra]
 author = "Enrico Fermi"
 type = "post"
-
+images = "/static/images/image-2.jpg"
 ---
 
 Begin with intro paragraph

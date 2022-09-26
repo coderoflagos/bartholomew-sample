@@ -3,20 +3,19 @@
 
 
 <h4>Recent Posts</h4>
-{{!-- 
-    The blogs function iterates over site pages and returns only the posts
-    found under /content/blog.
- --}}
+{{!--
+The blogs function iterates over site pages and returns only the posts
+found under /content/blog.
+--}}
 {{#each (blogs site.pages)}}
 <div class="col-md-6">
-    <a href="javascript:void(0)" style="color: #212529; text-decoration: none;">
+    <a href="{{uri}}"" style=" color: #212529; text-decoration: none;">
         <div class="cardo shadow-lg" style="display: inline-block;">
-            <img src="https://kinsta.com/wp-content/uploads/2018/04/visual-content-strategy-2.png" class="card__image"
-                alt="brown couch" />
+            <img src="{{page.head.extra.images}}" class="card__image" alt="brown couch" />
             <div class="card__content">
                 {{!--
-                 `this` refers to the particular post
-                 --}}
+                `this` refers to the particular post
+                --}}
                 {{#with this.head}}
                 <span class="card__title">{{title}}</span>
                 <p class="blog-post-meta card-text">{{#if extra.date}}Published: {{extra.date}}{{/if}}</p>
