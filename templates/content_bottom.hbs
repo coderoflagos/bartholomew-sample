@@ -1,0 +1,42 @@
+{{! See content_top.hbs }}
+</div>
+</div>
+
+</main>
+<footer>
+    
+
+        <div class="p-4">
+            <h4 class="fst-italic">You can follow on socials 👀</h4>
+
+            <div class="container">
+                <div class="row">
+           
+            <h4 style="text-align: center;">    {{#with site.info.extra}} </h4>
+
+                <div class="col-sm-6">
+                    
+                {{#if github }}<a class="fa fa-github" href="{{github}}" style="display: block; font-size: 36px; text-decoration: none;
+cursor: auto; color: #000;"></a>{{/if}}
+                </div>
+                
+                
+                <div class="col-sm-6">
+                {{#if twitter }}<a class="fa fa-twitter" href="{{twitter}}" style="display: block; font-size: 36px; text-decoration: none;
+cursor: auto; color: #1DA1F2;"></a>{{/if}}
+                </div>
+
+                {{#if facebook }}<a href="{{facebook}}">Facebook</a>{{/if}}
+                {{/with}}
+
+            </div>
+        </div>
+</div>
+    {{#if site.info.extra.copyright }}
+    <p>&copy; {{site.info.extra.copyright}} </p>
+    {{/if}}
+</footer>
+
+</body>
+
+</html>

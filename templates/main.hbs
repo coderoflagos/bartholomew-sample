@@ -1,0 +1,75 @@
+{{! This adds the HTML head section and the beginning of the body. See content_top.hbs. }}
+{{> content_top }}
+
+
+<h4>Recent Posts</h4>
+{{!--
+The blogs function iterates over site pages and returns only the posts
+found under /content/blog.
+--}}
+{{#each (blogs site.pages)}}
+<div class="col-md-6">
+        <div class="cardo shadow-lg" style="display: inline-block;">
+            <img src="{{page.head.extra.images}}" class="card__image" alt="brown couch" />
+            <div class="card__content">
+                {{!--
+                 `this` refers to the particular post
+                 --}}   
+                <span class="card__title">{{page.head.title}}</span>
+                <p class="blog-post-meta card-text">{{#if extra.date}}Published: {{extra.date}}{{/if}}</p>
+            
+                {{! Since this is HTML, we use the triple-curly }}
+             {{page.head.description}}
+                {{! Remove the `!` on the line below to see how to call a Rhai script }}
+                {{! echo "world" }}
+<br><br>
+<div>
+<a class="read" href="{{uri}}">Read More</a>
+</div>
+
+            </div>
+
+        </div>
+</div>
+{{/each}}
+
+<style>
+.read {
+  line-height:1em;
+  letter-spacing:0.06em;
+  font-family: Poppins;
+  font-weight:normal;
+  font-size:16px;
+  text-decoration:none;
+  color:#fff;
+  background:#0a0a23;
+  display:inline-block;
+  padding:15px 12px 15px 15px;
+  transition:background 200ms;
+  border-radius:4px;
+}
+.read:hover {
+  background:#0a0a23;
+  border: 3px;
+  color: #fff;
+     font-family: Poppins;
+}
+.read:after {
+  font-family: Poppins;
+  font-weight:300;
+
+  margin-left:20px;
+  color:#cea052;
+  font-size:18px;
+  vertical-align:middle;
+  transition:color 200ms;
+}
+
+.read:hover:after {
+  color:#231f20;
+}
+</style>
+<!-- end col -->
+
+{{! This closes the body. See content_bottom.hbs. }}
+{{> content_bottom }}
